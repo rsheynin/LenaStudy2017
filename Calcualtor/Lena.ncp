@@ -1,0 +1,1193 @@
+<Project>
+  <Name>Lena</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Calcualtor.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IActionManager</Name>
+        <Access>Public</Access>
+        <Location left="414" top="204" />
+        <Size width="214" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">IResult Calculate(CalculateDTO obj)</Member>
+        <Member type="Method">List&lt;String&gt; GetAllOperators()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICounter</Name>
+        <Access>Internal</Access>
+        <Location left="262" top="10" />
+        <Size width="193" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+        <Member type="Method">float Count(CalculateDTO obj)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResult</Name>
+        <Access>Public</Access>
+        <Location left="469" top="10" />
+        <Size width="163" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>RouteConfig</Name>
+        <Access>Public</Access>
+        <Location left="1499" top="631" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RouteConfig()</Member>
+        <Member type="Method">public static Void RegisterRoutes(RouteCollection routes)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WebApiConfig</Name>
+        <Access>Public</Access>
+        <Location left="1514" top="886" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static Void Register(HttpConfiguration config)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Global</Name>
+        <Access>Public</Access>
+        <Location left="1313" top="631" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Global()</Member>
+        <Member type="Method">private Void Application_Start(Object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ActionManager</Name>
+        <Access>Public</Access>
+        <Location left="414" top="331" />
+        <Size width="232" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly Dictionary&lt;String, ICounter&gt; _actionDict</Member>
+        <Member type="Constructor">public ActionManager()</Member>
+        <Member type="Method">public IResult Calculate(CalculateDTO obj)</Member>
+        <Member type="Method">public List&lt;String&gt; GetAllOperators()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalculateDTO</Name>
+        <Access>Public</Access>
+        <Location left="939" top="10" />
+        <Size width="163" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Single A</Member>
+        <Member type="Field">public Single B</Member>
+        <Member type="Field">public String Operator</Member>
+        <Member type="Constructor">public CalculateDTO()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResult</Name>
+        <Access>Public</Access>
+        <Location left="687" top="10" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Constructor">public ColorResult()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Const</Name>
+        <Access>Public</Access>
+        <Location left="939" top="181" />
+        <Size width="171" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public const String MULTIPLICATION = *</Member>
+        <Member type="Field">public const String DIVISION = /</Member>
+        <Member type="Field">public const String PLUS = +</Member>
+        <Member type="Field">public const String MINUS = -</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Division</Name>
+        <Access>Public</Access>
+        <Location left="10" top="348" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Minus</Name>
+        <Access>Public</Access>
+        <Location left="10" top="235" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Multiplication</Name>
+        <Access>Public</Access>
+        <Location left="10" top="122" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Plus</Name>
+        <Access>Public</Access>
+        <Location left="10" top="10" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalculateController</Name>
+        <Access>Public</Access>
+        <Location left="695" top="204" />
+        <Size width="190" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly ActionManager _actionManager</Member>
+        <Member type="Constructor">public CalculateController()</Member>
+        <Member type="Method">public List&lt;String&gt; Get()</Member>
+        <Member type="Method">public IResult Post(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HomeController</Name>
+        <Access>Public</Access>
+        <Location left="939" top="350" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public HomeController()</Member>
+        <Member type="Method">public ActionResult Index()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="6" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>517</X>
+          <Y>325</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="8" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>659</X>
+          <Y>43</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>678</X>
+          <Y>43</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="10" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>236</X>
+          <Y>392</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>328</X>
+          <Y>337</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="11" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>228</X>
+          <Y>285</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>303</X>
+          <Y>141</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="12" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>261</X>
+          <Y>180</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>281</X>
+          <Y>150</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="13" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>230</X>
+          <Y>69</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>230</X>
+          <Y>69</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="14" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>691</X>
+          <Y>409</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>_actionManager</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Refactor_result</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>HomeController</Name>
+        <Access>Public</Access>
+        <Location left="890" top="409" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public HomeController()</Member>
+        <Member type="Method">public ActionResult Index()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalculateController</Name>
+        <Access>Public</Access>
+        <Location left="668" top="309" />
+        <Size width="190" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly ActionManager _actionManager</Member>
+        <Member type="Constructor">public CalculateController()</Member>
+        <Member type="Method">public List&lt;String&gt; GetOperators()</Member>
+        <Member type="Method">public List&lt;String&gt; GetResultTypes()</Member>
+        <Member type="Method">public IResult Post(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Plus</Name>
+        <Access>Public</Access>
+        <Location left="30" top="30" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Multiplication</Name>
+        <Access>Public</Access>
+        <Location left="30" top="142" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Minus</Name>
+        <Access>Public</Access>
+        <Location left="30" top="255" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Division</Name>
+        <Access>Public</Access>
+        <Location left="30" top="368" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Const</Name>
+        <Access>Public</Access>
+        <Location left="890" top="201" />
+        <Size width="171" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public const String MULTIPLICATION = *</Member>
+        <Member type="Field">public const String DIVISION = /</Member>
+        <Member type="Field">public const String PLUS = +</Member>
+        <Member type="Field">public const String MINUS = -</Member>
+        <Member type="Field">public const String PARITY = Parity</Member>
+        <Member type="Field">public const String COLOR = Color</Member>
+        <Member type="Field">public const String NUMBER = Number</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResult</Name>
+        <Access>Public</Access>
+        <Location left="707" top="30" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Field">public String Color</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalculateDTO</Name>
+        <Access>Public</Access>
+        <Location left="890" top="30" />
+        <Size width="163" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Single A</Member>
+        <Member type="Field">public Single B</Member>
+        <Member type="Field">public String ResultType</Member>
+        <Member type="Field">public String Operator</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ActionManager</Name>
+        <Access>Public</Access>
+        <Location left="329" top="440" />
+        <Size width="293" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly Dictionary&lt;String, ICounter&gt; _actionDict</Member>
+        <Member type="Field">Dictionary&lt;String, IResultFactory&gt; _resultFactoryDict</Member>
+        <Member type="Constructor">public ActionManager()</Member>
+        <Member type="Method">public IResult Calculate(CalculateDTO obj)</Member>
+        <Member type="Method">public List&lt;String&gt; GetAllOperators()</Member>
+        <Member type="Method">public List&lt;String&gt; GetAllResultsTypes()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Global</Name>
+        <Access>Public</Access>
+        <Location left="1333" top="651" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Global()</Member>
+        <Member type="Method">private Void Application_Start(Object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WebApiConfig</Name>
+        <Access>Public</Access>
+        <Location left="890" top="530" />
+        <Size width="231" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static Void Register(HttpConfiguration config)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RouteConfig</Name>
+        <Access>Public</Access>
+        <Location left="1519" top="651" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RouteConfig()</Member>
+        <Member type="Method">public static Void RegisterRoutes(RouteCollection routes)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResult</Name>
+        <Access>Public</Access>
+        <Location left="489" top="30" />
+        <Size width="163" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICounter</Name>
+        <Access>Internal</Access>
+        <Location left="282" top="30" />
+        <Size width="193" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+        <Member type="Method">float Count(CalculateDTO obj)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IActionManager</Name>
+        <Access>Public</Access>
+        <Location left="382" top="309" />
+        <Size width="214" height="112" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">IResult Calculate(CalculateDTO obj)</Member>
+        <Member type="Method">List&lt;String&gt; GetAllOperators()</Member>
+        <Member type="Method">List&lt;String&gt; GetAllResultsTypes()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResultFactory</Name>
+        <Access>Internal</Access>
+        <Location left="316" top="624" />
+        <Size width="218" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+        <Member type="Method">IResult Create(float result)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParityResultFactory</Name>
+        <Access>Public</Access>
+        <Location left="64" top="855" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public IResult Create(float result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NumberResultFactory</Name>
+        <Access>Public</Access>
+        <Location left="64" top="736" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public IResult Create(float result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResultFactory</Name>
+        <Access>Public</Access>
+        <Location left="64" top="624" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public IResult Create(float result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NumberResult</Name>
+        <Access>Public</Access>
+        <Location left="707" top="171" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParityResult</Name>
+        <Access>Public</Access>
+        <Location left="456" top="171" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public String Parity</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>667</X>
+          <Y>518</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>_actionManager</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>250</X>
+          <Y>89</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>250</X>
+          <Y>89</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>281</X>
+          <Y>200</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>301</X>
+          <Y>170</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>248</X>
+          <Y>305</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>323</X>
+          <Y>161</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="5" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>256</X>
+          <Y>412</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>348</X>
+          <Y>357</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="7" second="13">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>679</X>
+          <Y>63</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>698</X>
+          <Y>63</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="9" second="15">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>485</X>
+          <Y>447</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="17" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>290</X>
+          <Y>899</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>366</X>
+          <Y>880</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>315</X>
+          <Y>794</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>335</X>
+          <Y>764</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="19" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>284</X>
+          <Y>683</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>284</X>
+          <Y>683</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="20" second="13">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>645</X>
+          <Y>173</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>638</X>
+          <Y>136</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="21" second="13">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Refactor_IOC</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ParityResult</Name>
+        <Access>Public</Access>
+        <Location left="432" top="147" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public String Parity</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NumberResult</Name>
+        <Access>Public</Access>
+        <Location left="683" top="147" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResultFactory</Name>
+        <Access>Public</Access>
+        <Location left="10" top="712" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public IResult Create(float result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NumberResultFactory</Name>
+        <Access>Public</Access>
+        <Location left="10" top="826" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public IResult Create(float result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParityResultFactory</Name>
+        <Access>Public</Access>
+        <Location left="10" top="941" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public IResult Create(float result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResultFactory</Name>
+        <Access>Internal</Access>
+        <Location left="262" top="712" />
+        <Size width="218" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+        <Member type="Method">IResult Create(float result)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IActionManager</Name>
+        <Access>Public</Access>
+        <Location left="330" top="291" />
+        <Size width="214" height="112" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">IResult Calculate(CalculateDTO obj)</Member>
+        <Member type="Method">List&lt;String&gt; GetAllOperators()</Member>
+        <Member type="Method">List&lt;String&gt; GetAllResultsTypes()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICounter</Name>
+        <Access>Internal</Access>
+        <Location left="262" top="18" />
+        <Size width="193" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+        <Member type="Method">float Count(CalculateDTO obj)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResult</Name>
+        <Access>Public</Access>
+        <Location left="480" top="18" />
+        <Size width="163" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>RouteConfig</Name>
+        <Access>Public</Access>
+        <Location left="1539" top="671" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public RouteConfig()</Member>
+        <Member type="Method">public static Void RegisterRoutes(RouteCollection routes)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WebApiConfig</Name>
+        <Access>Public</Access>
+        <Location left="907" top="510" />
+        <Size width="231" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static Void Register(HttpConfiguration config)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Global</Name>
+        <Access>Public</Access>
+        <Location left="1353" top="671" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Global()</Member>
+        <Member type="Method">private Void Application_Start(Object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ActionManager</Name>
+        <Access>Public</Access>
+        <Location left="201" top="476" />
+        <Size width="571" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly Dictionary&lt;String, ICounter&gt; _actionDict</Member>
+        <Member type="Field">Dictionary&lt;String, IResultFactory&gt; _resultFactoryDict</Member>
+        <Member type="Constructor">public ActionManager(Dictionary&lt;String, ICounter&gt; actionDict, Dictionary&lt;String, IResultFactory&gt; resultFactoryDict)</Member>
+        <Member type="Method">public IResult Calculate(CalculateDTO obj)</Member>
+        <Member type="Method">public List&lt;String&gt; GetAllOperators()</Member>
+        <Member type="Method">public List&lt;String&gt; GetAllResultsTypes()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalculateDTO</Name>
+        <Access>Public</Access>
+        <Location left="907" top="10" />
+        <Size width="163" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Single A</Member>
+        <Member type="Field">public Single B</Member>
+        <Member type="Field">public String ResultType</Member>
+        <Member type="Field">public String Operator</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResult</Name>
+        <Access>Public</Access>
+        <Location left="683" top="18" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Field">public String Color</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Const</Name>
+        <Access>Public</Access>
+        <Location left="907" top="181" />
+        <Size width="171" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public const String MULTIPLICATION = *</Member>
+        <Member type="Field">public const String DIVISION = /</Member>
+        <Member type="Field">public const String PLUS = +</Member>
+        <Member type="Field">public const String MINUS = -</Member>
+        <Member type="Field">public const String PARITY = Parity</Member>
+        <Member type="Field">public const String COLOR = Color</Member>
+        <Member type="Field">public const String NUMBER = Number</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Division</Name>
+        <Access>Public</Access>
+        <Location left="10" top="356" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Minus</Name>
+        <Access>Public</Access>
+        <Location left="10" top="243" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Multiplication</Name>
+        <Access>Public</Access>
+        <Location left="10" top="130" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Plus</Name>
+        <Access>Public</Access>
+        <Location left="10" top="18" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">public float Count(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CalculateController</Name>
+        <Access>Public</Access>
+        <Location left="594" top="291" />
+        <Size width="282" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly ActionManager _actionManager</Member>
+        <Member type="Constructor">public CalculateController(IActionManager actionManager)</Member>
+        <Member type="Method">public List&lt;String&gt; GetOperators()</Member>
+        <Member type="Method">public List&lt;String&gt; GetResultTypes()</Member>
+        <Member type="Method">public IResult Post(CalculateDTO obj)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HomeController</Name>
+        <Access>Public</Access>
+        <Location left="907" top="389" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public HomeController()</Member>
+        <Member type="Method">public ActionResult Index()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="0" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>514</X>
+          <Y>122</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>529</X>
+          <Y>121</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="1" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>629</X>
+          <Y>189</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>637</X>
+          <Y>130</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>230</X>
+          <Y>771</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>230</X>
+          <Y>771</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>261</X>
+          <Y>884</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>281</X>
+          <Y>852</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>236</X>
+          <Y>985</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>312</X>
+          <Y>968</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="12" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>433</X>
+          <Y>429</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="14" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>658</X>
+          <Y>68</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>689</X>
+          <Y>51</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="16" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>245</X>
+          <Y>371</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>280</X>
+          <Y>345</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="17" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>228</X>
+          <Y>293</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>281</X>
+          <Y>155</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>261</X>
+          <Y>188</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>281</X>
+          <Y>158</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="19" second="7">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>230</X>
+          <Y>77</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>230</X>
+          <Y>77</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="20" second="12">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>843</X>
+          <Y>478</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>817</X>
+          <Y>554</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>_actionManager</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Client_Refactor</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IResultVeiw</Name>
+        <Access>Internal</Access>
+        <Location left="247" top="282" />
+        <Size width="218" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+        <Member type="Method">View Create(IResult result)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParityResultView</Name>
+        <Access>Public</Access>
+        <Location left="10" top="511" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">View Create(IResult result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NumberResultView</Name>
+        <Access>Public</Access>
+        <Location left="10" top="397" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">View Create(IResult result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResultView</Name>
+        <Access>Public</Access>
+        <Location left="10" top="282" />
+        <Size width="193" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Type { get; }</Member>
+        <Member type="Method">View Create(IResult result)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResult</Name>
+        <Access>Public</Access>
+        <Location left="500" top="38" />
+        <Size width="163" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">String Type { get; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ColorResult</Name>
+        <Access>Public</Access>
+        <Location left="760" top="22" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Field">public String Color</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NumberResult</Name>
+        <Access>Public</Access>
+        <Location left="716" top="184" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float CountResult</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParityResult</Name>
+        <Access>Public</Access>
+        <Location left="485" top="184" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public String Parity</Member>
+        <Member type="Property">public String Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ResultManager</Name>
+        <Access>Public</Access>
+        <Location left="35" top="126" />
+        <Size width="410" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Dictionary&lt;String, IResultView&gt; _resultViewDict</Member>
+        <Member type="Method">public View Execute(IResult res, Dictionary&lt;String, IResultView&gt; _resultViewDict)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IResultManager</Name>
+        <Access>Public</Access>
+        <Location left="35" top="10" />
+        <Size width="410" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">View Execute(IResult res, Dictionary&lt;String, IResultView&gt; _resultViewDict)</Member>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="1" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>236</X>
+          <Y>555</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>297</X>
+          <Y>538</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>261</X>
+          <Y>455</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>266</X>
+          <Y>422</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>230</X>
+          <Y>341</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>215</X>
+          <Y>341</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="5" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>735</X>
+          <Y>72</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>709</X>
+          <Y>71</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>662</X>
+          <Y>226</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>657</X>
+          <Y>150</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="7" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>567</X>
+          <Y>159</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>567</X>
+          <Y>141</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="8" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+</Project>
