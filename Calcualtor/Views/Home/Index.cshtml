@@ -1,0 +1,28 @@
+﻿<html ng-app="calculatorApp">
+<head>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/JS/Calculate.js"></script> 
+</head>
+<body ng-controller="calculateController">
+
+    <input ng-model="Action.A"/>
+    
+<select ng-model="Action.Operator">
+     <option ng-repeat="operator in operators" value="{{operator}}">{{operator}}</option>
+</select>
+<select ng-model="Action.ResultType">
+    <option ng-repeat="resultType in resultTypes" value="{{resultType}}">{{resultType}}</option>
+</select>
+
+    <input ng-model="Action.B"/>
+=
+    
+        <result></result>
+    @*<div ng-if="result != null"></div>*@
+
+    <button type="button" ng-click="calculateResult()">Count</button>
+
+
+
+</body>
+</html>
