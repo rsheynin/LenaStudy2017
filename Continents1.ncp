@@ -233,11 +233,13 @@
         <Name>CityController</Name>
         <Access>Public</Access>
         <Location left="30" top="589" />
-        <Size width="251" height="129" />
+        <Size width="251" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private readonly CityService _cityService</Member>
         <Member type="Constructor">public CityController(ICityService cityService)</Member>
         <Member type="Method">public List&lt;City&gt; GetAllCity()</Member>
+        <Member type="Method">public List&lt;City&gt; GetCitiesByContinent(int Continent_Id)</Member>
+        <Member type="Method">public List&lt;City&gt; GetCitiesByContry(int Contry_Id)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Interface">
@@ -247,9 +249,9 @@
         <Size width="246" height="129" />
         <Collapsed>False</Collapsed>
         <Member type="Method">List&lt;City&gt; GetAllCities()</Member>
-        <Member type="Method">List&lt;City&gt; GetCitiesInContinent()</Member>
-        <Member type="Method">IResult Add(int Transl_Id)</Member>
-        <Member type="Method">List&lt;City&gt; GetCitiesInContry(int Contry_Id)</Member>
+        <Member type="Method">List&lt;City&gt; GetCitiesByContinent()</Member>
+        <Member type="Method">IResult Add(int Transl_Id, int Contry_Id)</Member>
+        <Member type="Method">List&lt;City&gt; GetCitiesByContry(int Contry_Id)</Member>
       </Entity>
       <Entity type="Interface">
         <Name>IContryService</Name>
@@ -259,7 +261,7 @@
         <Collapsed>False</Collapsed>
         <Member type="Method">List&lt;Contry&gt; GetAllContries()</Member>
         <Member type="Method">List&lt;Contry&gt; GetContinentContries(int Continent_Id)</Member>
-        <Member type="Method">IResult Add(int Transl_Id)</Member>
+        <Member type="Method">IResult Add(int Transl_Id, int Continent_Id)</Member>
       </Entity>
       <Entity type="Interface">
         <Name>IContinentService</Name>
@@ -282,11 +284,11 @@
       <Entity type="Interface">
         <Name>ITranslationService</Name>
         <Access>Public</Access>
-        <Location left="296" top="45" />
+        <Location left="296" top="33" />
         <Size width="246" height="95" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">Dictionary&lt;int, string&gt; GetAllTranslations()</Member>
         <Member type="Method">IResult Add(int Lang_Id, string Text)</Member>
+        <Member type="Method">Dictionary&lt;int, string&gt; GetTranslationsByLanguage(int Lang_Id)</Member>
       </Entity>
       <Entity type="Class">
         <Name>TranslationService</Name>
@@ -297,18 +299,19 @@
         <Member type="Field">private readonly DAL _dal</Member>
         <Member type="Constructor">public TranslationService(IDAL dal)</Member>
         <Member type="Method">public IResult Add(int Lang_Id, string Text)</Member>
-        <Member type="Method">public Dictionary&lt;int, string&gt; GetAllTranslations()</Member>
+        <Member type="Method">public Dictionary&lt;int, string&gt; GetTranslationsByLanguage(int Lang_Id)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>ContryController</Name>
         <Access>Public</Access>
         <Location left="30" top="454" />
-        <Size width="251" height="129" />
+        <Size width="251" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private readonly ContryService _contryService</Member>
         <Member type="Constructor">public ContryController(IContryService contryService)</Member>
-        <Member type="Method">public List&lt;Contry&gt; GetAllContry()</Member>
+        <Member type="Method">public List&lt;Contry&gt; GetAllContries()</Member>
+        <Member type="Method">public List&lt;Contry&gt; GetContinentContries(int Continent_Id)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -341,10 +344,10 @@
         <Collapsed>False</Collapsed>
         <Member type="Field">private readonly DAL _dal</Member>
         <Member type="Constructor">public CityService(IDAL dal)</Member>
+        <Member type="Method">public IResult Add(int Transl_Id, int Contry_Id)</Member>
         <Member type="Method">public List&lt;City&gt; GetAllCities()</Member>
-        <Member type="Method">public IResult Add(int Transl_Id)</Member>
-        <Member type="Method">public List&lt;City&gt; GetCitiesInContinent(int Continent_Id)</Member>
-        <Member type="Method">public List&lt;City&gt; GetCitiesInContry(int Contry_Id)</Member>
+        <Member type="Method">public List&lt;City&gt; GetCitiesByContinent(int Continent_Id)</Member>
+        <Member type="Method">public List&lt;City&gt; GetCitiesByContry(int Contry_Id)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -356,7 +359,7 @@
         <Member type="Field">private readonly DAL _dal</Member>
         <Member type="Constructor">public ContryService(IDAL dal)</Member>
         <Member type="Method">public List&lt;Contry&gt; GetAllContries()</Member>
-        <Member type="Method">public IResult Add(int Transl_Id)</Member>
+        <Member type="Method">public IResult Add(int Transl_Id, int Continent_Id)</Member>
         <Member type="Method">public List&lt;Contry&gt; GetContinentContries(int Continent_Id)</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -375,7 +378,7 @@
       <Entity type="Class">
         <Name>Translation</Name>
         <Access>Public</Access>
-        <Location left="864" top="45" />
+        <Location left="864" top="10" />
         <Size width="163" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public int Id</Member>
@@ -418,12 +421,12 @@
       <Entity type="Class">
         <Name>TranslationController</Name>
         <Access>Public</Access>
-        <Location left="30" top="33" />
+        <Location left="30" top="35" />
         <Size width="251" height="129" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private readonly TranslationService _translationService</Member>
         <Member type="Constructor">public TranslationController(ITranslationService translationService)</Member>
-        <Member type="Method">public Dictionary&lt;int, string&gt; GetAllTranslations()</Member>
+        <Member type="Method">Dictionary&lt;int, string&gt; GetTranslationsByLanguage(int Lang_Id)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -468,18 +471,20 @@
       <Entity type="Interface">
         <Name>IModel</Name>
         <Access>Public</Access>
-        <Location left="1145" top="39" />
-        <Size width="163" height="78" />
+        <Location left="1189" top="185" />
+        <Size width="163" height="95" />
         <Collapsed>False</Collapsed>
-        <Member type="Property">int Id { get; }</Member>
+        <Member type="Property">string Type { get; }</Member>
       </Entity>
       <Entity type="Class">
-        <Name>AddNewDomainService</Name>
+        <Name>AddNewDomainBaseService</Name>
         <Access>Public</Access>
-        <Location left="30" top="924" />
-        <Size width="197" height="162" />
+        <Location left="30" top="923" />
+        <Size width="197" height="179" />
         <Collapsed>False</Collapsed>
-        <Member type="Constructor">protected AddNewDomainService(Dictionary&lt;string, IAddNewDomain&gt; dict, ITranslatinService service)</Member>
+        <Member type="Field">private readonly AddNewDomain _addNewDomain</Member>
+        <Member type="Field">private readonly ClientInfo _clientInfo</Member>
+        <Member type="Constructor">protected AddNewDomainBaseService(IAddNewDomain _addDomain, ITranslatinService service)</Member>
         <Member type="Method">public IResult Add(IAddNewDomain obj)</Member>
         <Member type="Method">IResult AddDomain(IAddNewDomain obj)</Member>
         <Member type="Method">public int GetDefaultLanguage()</Member>
@@ -488,7 +493,7 @@
       <Entity type="Class">
         <Name>ClientInfo</Name>
         <Access>Public</Access>
-        <Location left="634" top="1164" />
+        <Location left="634" top="1162" />
         <Size width="163" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public string Text</Member>
@@ -527,7 +532,7 @@
       <Entity type="Class">
         <Name>DomainController</Name>
         <Access>Public</Access>
-        <Location left="57" top="729" />
+        <Location left="58" top="765" />
         <Size width="187" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private readonly DomainManager _domainManager</Member>
@@ -538,7 +543,7 @@
       <Entity type="Class">
         <Name>DomainManager</Name>
         <Access>Public</Access>
-        <Location left="284" top="871" />
+        <Location left="284" top="870" />
         <Size width="318" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public DomainManager(Dictionary&lt;string, IDomain&gt; domainDict)</Member>
@@ -553,12 +558,18 @@
         <Collapsed>False</Collapsed>
         <Member type="Method">List&lt;String&gt; GetAllDomains()</Member>
       </Entity>
+      <Entity type="Class">
+        <Name>TranslationResult</Name>
+        <Access>Public</Access>
+        <Location left="1080" top="713" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int Translation_Id</Member>
+        <Member type="Property">public string Type { get; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Realization" first="13" second="22">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-      </Relationship>
       <Relationship type="Realization" first="19" second="22">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
@@ -604,7 +615,7 @@
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>567</X>
-          <Y>92</Y>
+          <Y>80</Y>
         </BendPoint>
       </Relationship>
       <Relationship type="Realization" first="18" second="4">
@@ -650,6 +661,10 @@
       <Relationship type="Realization" first="29" second="30">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="31" second="21">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
     </Relationships>
   </ProjectItem>
