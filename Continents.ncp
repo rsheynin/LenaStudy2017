@@ -1,0 +1,228 @@
+<Project>
+  <Name>Continents</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Server</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IDAL</Name>
+        <Access>Public</Access>
+        <Location left="328" top="928" />
+        <Size width="293" height="112" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool Create&lt;T&gt;(T obj)</Member>
+        <Member type="Method">bool Update&lt;T&gt;(T obj)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Language</Name>
+        <Access>Public</Access>
+        <Location left="844" top="152" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int Id</Member>
+        <Member type="Field">public int Translation_Id</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LanguageService</Name>
+        <Access>Public</Access>
+        <Location left="567" top="152" />
+        <Size width="208" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly DAL _dal</Member>
+        <Member type="Constructor">public LanguageService(IDAL dal)</Member>
+        <Member type="Method">public List&lt;Language&gt; GetAllLanguages()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TranslationController</Name>
+        <Access>Public</Access>
+        <Location left="10" top="13" />
+        <Size width="251" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly TranslationService _translationService</Member>
+        <Member type="Constructor">public TranslationController(ITranslationService translationService)</Member>
+        <Member type="Method">public Dictionary&lt;int, string&gt; GetAllTranslations()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Continent</Name>
+        <Access>Public</Access>
+        <Location left="844" top="276" />
+        <Size width="163" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int Id</Member>
+        <Member type="Field">public int Translation_Id</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Contry</Name>
+        <Access>Public</Access>
+        <Location left="844" top="384" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int Id</Member>
+        <Member type="Field">public int Translation_Id</Member>
+        <Member type="Field">public int Continent_Id</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>City</Name>
+        <Access>Public</Access>
+        <Location left="844" top="509" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int Id</Member>
+        <Member type="Field">public int Contry_Id</Member>
+        <Member type="Field">public int Translation_Id</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Translation</Name>
+        <Access>Public</Access>
+        <Location left="844" top="25" />
+        <Size width="163" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int Id</Member>
+        <Member type="Field">public int Language_Id</Member>
+        <Member type="Field">public string Text</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContinentService</Name>
+        <Access>Public</Access>
+        <Location left="567" top="276" />
+        <Size width="207" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly DAL _dal</Member>
+        <Member type="Constructor">public ContinentService(IDAL dal)</Member>
+        <Member type="Method">public List&lt;Continent&gt; GetAllContinents()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContryService</Name>
+        <Access>Public</Access>
+        <Location left="567" top="413" />
+        <Size width="207" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly DAL _dal</Member>
+        <Member type="Constructor">public ContryService(IDAL dal)</Member>
+        <Member type="Method">public List&lt;Contry&gt; GetAllContries()</Member>
+        <Member type="Method">public List&lt;Contry&gt; GetContinentContries(int Continent_Id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CityService</Name>
+        <Access>Public</Access>
+        <Location left="567" top="569" />
+        <Size width="207" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly DAL _dal</Member>
+        <Member type="Constructor">public CityService(IDAL dal)</Member>
+        <Member type="Method">public List&lt;City&gt; GetAllCities()</Member>
+        <Member type="Method">public List&lt;City&gt; GetCitiesInContinent(int Continent_Id)</Member>
+        <Member type="Method">public List&lt;City&gt; GetCitiesInContry(int Contry_Id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LanguageController</Name>
+        <Access>Public</Access>
+        <Location left="10" top="152" />
+        <Size width="251" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly LanguageService _languageService</Member>
+        <Member type="Constructor">public LanguageController(ILanguageService languageService)</Member>
+        <Member type="Method">public List&lt;Languages&gt; GetAllLanguages()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContinentController</Name>
+        <Access>Public</Access>
+        <Location left="10" top="294" />
+        <Size width="251" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly ContinentService _continentService</Member>
+        <Member type="Constructor">public ContinentController(IContinentService continentService)</Member>
+        <Member type="Method">public List&lt;Continent&gt; GetAllContinents()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContryController</Name>
+        <Access>Public</Access>
+        <Location left="10" top="434" />
+        <Size width="251" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly ContryService _contryService</Member>
+        <Member type="Constructor">public ContryController(IContryService contryService)</Member>
+        <Member type="Method">public List&lt;Contry&gt; GetAllContry()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TranslationService</Name>
+        <Access>Public</Access>
+        <Location left="547" top="25" />
+        <Size width="246" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly DAL _dal</Member>
+        <Member type="Constructor">public TranslationService(IDAL dal)</Member>
+        <Member type="Method">public Dictionary&lt;int, string&gt; GetAllTranslations()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ITranslationService</Name>
+        <Access>Public</Access>
+        <Location left="276" top="25" />
+        <Size width="246" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Dictionary&lt;int, string&gt; GetAllTranslations()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ILanguageService</Name>
+        <Access>Public</Access>
+        <Location left="276" top="152" />
+        <Size width="246" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;Language&gt; GetAllLanguages()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IContinentService</Name>
+        <Access>Public</Access>
+        <Location left="276" top="276" />
+        <Size width="246" height="78" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;Continent&gt; GetAllContinents()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IContryService</Name>
+        <Access>Public</Access>
+        <Location left="276" top="413" />
+        <Size width="246" height="95" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;Contry&gt; GetAllContries()</Member>
+        <Member type="Method">List&lt;Contry&gt; GetContinentContries(int Continent_Id)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICityService</Name>
+        <Access>Public</Access>
+        <Location left="276" top="569" />
+        <Size width="246" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;City&gt; GetAllCities()</Member>
+        <Member type="Method">List&lt;City&gt; GetCitiesInContinent()</Member>
+        <Member type="Method">List&lt;City&gt; GetCitiesInContry(int Contry_Id)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>CityController</Name>
+        <Access>Public</Access>
+        <Location left="10" top="569" />
+        <Size width="251" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly CityService _cityService</Member>
+        <Member type="Constructor">public CityController(ICityService cityService)</Member>
+        <Member type="Method">public List&lt;City&gt; GetAllCity()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>

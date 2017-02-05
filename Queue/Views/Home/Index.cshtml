@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="queueApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Queue</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/JS/Queue.js"></script>
+
+</head>
+<body ng-controller="QueueCtrl">
+
+<h3>New Client</h3>
+    Enter client name: <input ng-model="NewClientName" />
+    <button type="button" ng-click="createClient()">Add</button>
+<h3>Client In Serve:</h3>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>DateTime</th>
+        </tr>
+        <tr>
+            <td>{{currentClient.Id}}</td>
+            <td>{{currentClient.Name}}</td>
+            <td ng-bind="currentClient.DateTime | date:'dd/MM/yyyy HH:mm'"></td>
+        </tr>
+    </table>
+<h3>Clients In Queue:</h3>
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>DateTime</th>
+        </tr>
+        <tr ng-repeat="client in clientList">
+            <td>{{client.Id}}</td>
+            <td>{{client.Name}}</td>
+            <td ng-bind="client.DateTime | date:'dd/MM/yyyy HH:mm'"></td>
+        </tr>
+    </table>
+    <button type="button" ng-click="serveNextClient()">Next</button>
+</div>
+</body>
+</html>
